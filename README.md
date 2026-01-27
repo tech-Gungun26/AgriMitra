@@ -1,7 +1,12 @@
 # AgriMitra 🌱
 
-Smart agriculture application built as a college project.
+AgriMitra is a smart agriculture application built as a college project.
 
-Frontend: React  
-Backend: ASP.NET Core Web API  
-Database: SQL Server (SSMS)
+## Tech Stack
+- Frontend: React (Vite)
+- Backend: ASP.NET Core Web API
+- Database: SQL Server (SSMS)
+- Authentication: JWT
+- APIs: OpenWeather, Chatbot API
+
+## Project Structure
