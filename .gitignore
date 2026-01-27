@@ -5,3 +5,13 @@ bin/
 obj/
 .vscode/
 .idea/
+.vs/
+*.suo
+*.user
+*.vsidx
+applicationhost.config
+
+# SQL / VS Cache
+CodeChunks.db*
+SemanticSymbols.db*
+

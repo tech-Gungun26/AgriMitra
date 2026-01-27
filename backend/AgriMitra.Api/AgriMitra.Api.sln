@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36717.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AgriMitra.Api", "AgriMitra.Api.csproj", "{6644BEDD-64B4-4538-9DF3-822A75659B08}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6644BEDD-64B4-4538-9DF3-822A75659B08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6644BEDD-64B4-4538-9DF3-822A75659B08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6644BEDD-64B4-4538-9DF3-822A75659B08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6644BEDD-64B4-4538-9DF3-822A75659B08}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D75BDBE7-DFCF-46A5-BF63-0B015A710B7E}
+	EndGlobalSection
+EndGlobal
