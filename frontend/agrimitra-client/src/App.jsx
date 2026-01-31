@@ -4,6 +4,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Account from "./pages/Account";
 import PrivateRoute from "./components/PrivateRoute";
+import Chatbot from "./pages/Chatbot";
 
 function App() {
   return (
@@ -29,7 +30,18 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route
+  path="/chatbot"
+  element={
+    <PrivateRoute>
+      <Chatbot />
+    </PrivateRoute>
+  }
+/>
       </Routes>
+
+      
+
     </BrowserRouter>
   );
 }

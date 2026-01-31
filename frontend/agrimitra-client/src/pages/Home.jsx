@@ -14,6 +14,12 @@ function Home() {
       <h2>Welcome to AgriMitra 🌱</h2>
       <p>You are logged in.</p>
 
+    <p>
+  <a href="/weather">Weather</a> |{" "}
+  <a href="/chatbot">Chatbot</a> |{" "}
+  <a href="/account">Account</a>
+</p>
+
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
