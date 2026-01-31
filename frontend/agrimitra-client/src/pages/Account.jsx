@@ -1,5 +1,5 @@
 import { getUserFromToken } from "../utils/auth";
-
+import "../styles/pages.css";
 function Account() {
   const user = getUserFromToken();
 

@@ -5,6 +5,10 @@ import Home from "./pages/Home";
 import Account from "./pages/Account";
 import PrivateRoute from "./components/PrivateRoute";
 import Chatbot from "./pages/Chatbot";
+import "./styles/theme.css";
+import "./styles/layout.css";
+import Sidebar from "./components/Sidebar";
+import Weather from "./pages/Weather";
 
 function App() {
   return (
@@ -17,7 +21,12 @@ function App() {
           path="/home"
           element={
             <PrivateRoute>
+            <div className="app-layout">
+        <Sidebar />
+        <div className="main-content">
               <Home />
+              </div>
+              </div>
             </PrivateRoute>
           }
         />
@@ -26,7 +35,12 @@ function App() {
           path="/account"
           element={
             <PrivateRoute>
+            <div className="app-layout">
+        <Sidebar />
+        <div className="main-content">
               <Account />
+              </div>
+              </div>
             </PrivateRoute>
           }
         />
@@ -34,10 +48,29 @@ function App() {
   path="/chatbot"
   element={
     <PrivateRoute>
+    <div className="app-layout">
+        <Sidebar />
+        <div className="main-content">
       <Chatbot />
+      </div>
+      </div>
     </PrivateRoute>
   }
 />
+<Route
+  path="/weather"
+  element={
+    <PrivateRoute>
+      <div className="app-layout">
+        <Sidebar />
+        <div className="main-content">
+          <Weather />
+        </div>
+      </div>
+    </PrivateRoute>
+  }
+/>
+
       </Routes>
 
       

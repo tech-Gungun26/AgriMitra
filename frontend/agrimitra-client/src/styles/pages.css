@@ -1,0 +1,6 @@
+.page-card {
+  background-color: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
+}
