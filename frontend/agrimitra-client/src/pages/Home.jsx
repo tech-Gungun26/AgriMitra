@@ -17,6 +17,12 @@ function Home() {
     <p>
   <a href="/weather">Weather</a> |{" "}
   <a href="/chatbot">Chatbot</a> |{" "}
+   <button
+        onClick={() => navigate("/disease-detection")}
+        style={{ padding: "10px 20px", marginTop: "20px" }}
+      >
+        Detect Plant Disease
+      </button>
   <a href="/account">Account</a>
 </p>
 

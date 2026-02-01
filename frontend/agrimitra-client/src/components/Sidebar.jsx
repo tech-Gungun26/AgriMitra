@@ -5,8 +5,10 @@ function Sidebar() {
   return (
     <div className="sidebar">
       <h2>🌱 AgriMitra</h2>
+
       <Link to="/home">Home</Link>
       <Link to="/weather">Weather</Link>
+      <Link to="/disease-detection">Disease Detection</Link>
       <Link to="/chatbot">Chatbot</Link>
       <Link to="/account">Account</Link>
     </div>

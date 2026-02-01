@@ -9,6 +9,8 @@ import "./styles/theme.css";
 import "./styles/layout.css";
 import Sidebar from "./components/Sidebar";
 import Weather from "./pages/Weather";
+import DiseaseDetection from "./pages/DiseaseDetection";
+
 
 function App() {
   return (
@@ -70,6 +72,7 @@ function App() {
     </PrivateRoute>
   }
 />
+<Route path="/disease-detection" element={<DiseaseDetection />} />
 
       </Routes>
 
