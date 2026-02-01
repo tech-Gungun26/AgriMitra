@@ -1,34 +1,46 @@
-import { logout } from "../utils/auth";
 import { useNavigate } from "react-router-dom";
 import "../styles/pages.css";
+
 function Home() {
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate("/");
-  };
-
+ 
   return (
-    <div style={{ padding: "40px" }}>
-      <h2>Welcome to AgriMitra 🌱</h2>
-      <p>You are logged in.</p>
+    <div className="home-wrapper">
+      <div className="signup-card page-card">
+        <div className="home-top">
+          <h2>Welcome to AgriMitra 🌱</h2>
+          <p className="home-sub">Choose an action below to get started</p>
+        </div>
 
-    <p>
-  <a href="/weather">Weather</a> |{" "}
-  <a href="/chatbot">Chatbot</a> |{" "}
-   <button
-        onClick={() => navigate("/disease-detection")}
-        style={{ padding: "10px 20px", marginTop: "20px" }}
-      >
-        Detect Plant Disease
-      </button>
-  <a href="/account">Account</a>
-</p>
+        <div className="home-grid">
+          <div className="home-card page-card" onClick={() => navigate('/weather')} role="button">
+            <div className="card-title">Weather</div>
+            <div className="card-desc">Get local weather and forecasts</div>
+          </div>
 
-      <button onClick={handleLogout}>Logout</button>
+          <div className="home-card page-card" onClick={() => navigate('/disease-detection')} role="button">
+            <div className="card-title">Disease Detection</div>
+            <div className="card-desc">Upload an image to detect plant disease</div>
+          </div>
+
+          <div className="home-card page-card" onClick={() => navigate('/chatbot')} role="button">
+            <div className="card-title">Chatbot</div>
+            <div className="card-desc">Ask farming questions and get suggestions</div>
+          </div>
+
+          <div className="home-card page-card" onClick={() => navigate('/account')} role="button">
+            <div className="card-title">Account</div>
+            <div className="card-desc">View or edit your profile</div>
+          </div>
+        </div>
+
+       
+          
+          
+      </div>
     </div>
   );
 }
 
-export default Home;
+export default Home; 

@@ -1,28 +1,93 @@
 .sidebar {
   width: 220px;
-  background-color: var(--green-main);
+  background: linear-gradient(180deg, var(--green-main), var(--green-dark));
   color: var(--white);
-  padding: 20px;
+  padding: 18px;
   box-shadow: var(--shadow-soft);
+  border-radius: calc(var(--radius) + 4px);
+  transition: var(--transition);
+  position: sticky;
+  top: 18px;
+  height: calc(100vh - 36px);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-.sidebar h2 {
+.sidebar-brand {
   margin-top: 0;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   font-size: 20px;
   text-align: center;
+  font-weight: 700;
 }
 
-.sidebar a {
+.sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-link {
   display: block;
   padding: 10px 14px;
-  margin-bottom: 10px;
   color: var(--white);
   text-decoration: none;
-  border-radius: var(--radius);
+  border-radius: 10px;
   transition: var(--transition);
+  font-weight: 600;
 }
 
-.sidebar a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+.sidebar-link:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  background: rgba(255,255,255,0.08);
 }
+
+.sidebar-link.active {
+  background: var(--white);
+  color: var(--green-dark);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
+  transform: translateY(-4px);
+}
+
+/* Responsive: collapse to top bar on small screens */
+@media (max-width: 880px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    border-radius: 0 0 var(--radius) var(--radius);
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .sidebar-brand {
+    display: none;
+  }
+
+  .sidebar-links {
+    flex-direction: row;
+    gap: 6px;
+    overflow-x: auto;
+    white-space: nowrap;
+    align-items: center;
+  }
+
+  .sidebar-link {
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 999px;
+    font-size: 0.95rem;
+  }
+
+  /* move the main content down so it isn't hidden behind the fixed top bar */
+  .app-layout .main-content {
+    margin-top: 64px;
+  }
+}
+

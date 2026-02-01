@@ -72,7 +72,19 @@ function App() {
     </PrivateRoute>
   }
 />
-<Route path="/disease-detection" element={<DiseaseDetection />} />
+<Route
+  path="/disease-detection"
+  element={
+    <PrivateRoute>
+      <div className="app-layout">
+        <Sidebar />
+        <div className="main-content">
+          <DiseaseDetection />
+        </div>
+      </div>
+    </PrivateRoute>
+  }
+/>
 
       </Routes>
 

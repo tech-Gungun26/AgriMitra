@@ -33,27 +33,36 @@ const DiseaseDetection = () => {
   };
 
   return (
-    <div>
-      <h2>Plant Disease Detection</h2>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => setFile(e.target.files[0])}
-        />
-        <button type="submit">Detect Disease</button>
-      </form>
-
-      {loading && <p>Analyzing image...</p>}
-
-      {result && (
-        <div>
-          <h3>Disease: {result.disease}</h3>
-          <p>{result.description}</p>
-          <p><b>Prevention:</b> {result.prevention}</p>
+    <div className="home-wrapper">
+      <div className="signup-card page-card weather-card">
+        <div className="home-top">
+          <h2>Plant Disease Detection</h2>
+          <p className="home-sub">Upload a photo and get quick detection</p>
         </div>
-      )}
+
+        <form onSubmit={handleSubmit} className="signup-form">
+          <div className="form-group">
+            <input
+              className="file-input"
+              type="file"
+              accept="image/*"
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </div>
+
+          <button className="signup-button" type="submit">Detect Disease</button>
+        </form>
+
+        {loading && <p className="home-sub">Analyzing image...</p>}
+
+        {result && (
+          <div className="weather-result">
+            <h3>Disease: {result.disease}</h3>
+            <p>{result.description}</p>
+            <p><b>Prevention:</b> {result.prevention}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

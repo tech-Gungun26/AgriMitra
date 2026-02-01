@@ -4,3 +4,292 @@
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
 }
+
+/* Signup specific styles */
+.signup-wrapper {
+  width: min(520px, 92%);
+  margin: 40px auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 48px);
+  box-sizing: border-box;
+}
+
+.signup-card {
+  padding: 28px;
+  border-radius: calc(var(--radius) + 4px);
+  transition: var(--transition);
+  background: linear-gradient(180deg, var(--white) 0%, #fbfff9 100%);
+  width: 100%;
+  max-width: 520px;
+}
+
+.signup-title {
+  margin: 0 0 16px;
+  color: var(--green-dark);
+  font-size: 1.5rem;
+  text-align: center;
+} 
+
+.signup-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.signup-title {
+  margin: 0 0 16px;
+  color: var(--green-dark);
+  font-size: 1.5rem;
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  padding: 12px 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition);
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--green-main);
+  box-shadow: 0 4px 12px rgba(46,125,50,0.12);
+}
+
+.signup-button {
+  margin-top: 4px;
+  background: var(--green-main);
+  color: var(--white);
+  border: none;
+  padding: 12px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 160ms cubic-bezier(.2,.9,.2,1), box-shadow 160ms;
+  box-shadow: 0 6px 14px rgba(46,125,50,0.18);
+}
+
+/* make form buttons fill the card width on auth forms */
+.signup-form .signup-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+}
+
+.signup-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(46,125,50,0.22);
+}
+
+.signup-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 22px rgba(46,125,50,0.22);
+}
+
+.signup-button:active {
+  transform: translateY(-1px) scale(0.995);
+}
+
+.signup-error {
+  color: #b00020;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* Footer and link styles for auth cards */
+.auth-footer {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  color: var(--gray-text);
+}
+
+.auth-footer .auth-link {
+  color: var(--green-main);
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 6px;
+  transition: var(--transition);
+}
+
+.auth-footer .auth-link:hover {
+  text-decoration: underline;
+  color: var(--green-dark);
+}
+
+/* Home page cards */
+.home-top h2 {
+  margin: 0 0 6px;
+  color: var(--green-dark);
+}
+
+.home-username {
+  color: var(--green-main);
+}
+
+.home-sub {
+  margin: 0 0 18px;
+  color: var(--gray-text);
+}
+
+/* Home wrapper is wider than auth pages */
+.home-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 18px;
+}
+
+/* When inside the logged-in layout (.main-content), make wrappers expand to fill the available area
+   so pages like Home, Weather, DiseaseDetection, Chatbot and Account are flexible and responsive */
+.main-content .home-wrapper,
+.main-content .signup-wrapper {
+  max-width: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 12px 16px;
+  min-height: auto;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Cards inside the main content should use the available width */
+.main-content .signup-card,
+.main-content .page-card {
+  max-width: none;
+  width: 100%;
+  padding: clamp(16px, 2vw, 28px);
+  border-radius: calc(var(--radius) + 6px);
+}
+
+/* Ensure grid and cards stretch nicely in the main content area */
+.main-content .home-grid {
+  gap: clamp(12px, 1.2vw, 20px);
+}
+
+/* reduce main content padding on very small screens */
+@media (max-width: 520px) {
+  .main-content {
+    padding: 12px;
+  }
+}
+
+.home-grid {
+  display: grid;
+  /* auto-fit lets cards reflow as window changes; minmax keeps a usable minimum */
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.home-card {
+  cursor: pointer;
+  padding: 18px;
+  border-radius: 12px;
+  transition: transform 200ms var(--transition), box-shadow 200ms var(--transition);
+  /* keep cards proportional to their width */
+  aspect-ratio: 4 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 120px; /* fallback on older browsers */
+}
+
+.home-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.card-title {
+  font-weight: 700;
+  color: var(--green-dark);
+  font-size: clamp(1rem, 1.2vw + 0.4rem, 1.15rem);
+}
+
+.card-desc {
+  margin-top: 6px;
+  color: var(--gray-text);
+  font-size: clamp(0.9rem, 0.9vw + 0.2rem, 1rem);
+}
+
+@media (max-width: 640px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-card {
+    aspect-ratio: auto; /* let content define height on small screens */
+    min-height: 100px;
+    padding: 14px;
+  }
+
+  .weather-form {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Weather & DiseaseDetection styles */
+.weather-form {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.weather-result {
+  margin-top: 12px;
+  color: var(--gray-text);
+}
+
+.file-input {
+  border: 1px dashed rgba(0,0,0,0.08);
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #fbfbfb;
+  cursor: pointer;
+}
+
+/* Chatbot iframe */
+.chatbot-iframe {
+  width: 100%;
+  height: clamp(360px, 60vh, 900px);
+  border: none;
+  border-radius: 10px;
+  margin-top: 8px;
+}
+
+/* make file input full-width on narrow screens */
+@media (max-width: 480px) {
+  .file-input {
+    width: 100%;
+  }
+
+  .signup-wrapper {
+    min-height: auto;
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+  .signup-card {
+    padding: 18px;
+  }
+
+  .signup-title {
+    font-size: 1.25rem;
+  }
+}
+

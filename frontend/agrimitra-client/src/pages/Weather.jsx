@@ -31,32 +31,38 @@ function Weather() {
   };
 
   return (
-    <div className="page-card">
-      <h2>Weather Forecast 🌦️</h2>
-
-      <div style={{ marginBottom: "15px" }}>
-        <input
-          type="text"
-          placeholder="Enter city name"
-          value={city}
-          onChange={(e) => setCity(e.target.value)}
-          style={{ padding: "8px", marginRight: "8px" }}
-        />
-        <button onClick={fetchWeather}>
-          Get Weather
-        </button>
-      </div>
-
-      {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {weather && (
-        <div>
-          <h3>{weather.name}</h3>
-          <p>🌡 Temperature: {weather.main.temp} °C</p>
-          <p>💧 Humidity: {weather.main.humidity}%</p>
-          <p>☁ Condition: {weather.weather[0].description}</p>
+    <div className="home-wrapper">
+      <div className="signup-card page-card weather-card">
+        <div className="home-top">
+          <h2>Weather Forecast 🌦️</h2>
+          <p className="home-sub">Check current weather by city</p>
         </div>
-      )}
+
+        <div className="weather-form" style={{ marginBottom: 15 }}>
+          <input
+            className="form-input"
+            type="text"
+            placeholder="Enter city name"
+            value={city}
+            onChange={(e) => setCity(e.target.value)}
+          />
+
+          <button className="signup-button" onClick={fetchWeather} style={{ marginLeft: 8 }}>
+            Get Weather
+          </button>
+        </div>
+
+        {error && <p className="signup-error">{error}</p>}
+
+        {weather && (
+          <div className="weather-result">
+            <h3>{weather.name}</h3>
+            <p>🌡 Temperature: {weather.main.temp} °C</p>
+            <p>💧 Humidity: {weather.main.humidity}%</p>
+            <p>☁ Condition: {weather.weather[0].description}</p>
+          </div>
+        )}
+      </div>
     </div>
   );
 }

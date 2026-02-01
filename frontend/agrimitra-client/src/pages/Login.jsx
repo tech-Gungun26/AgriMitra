@@ -38,36 +38,42 @@ function Login() {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "100px auto" }}>
-      <h2>AgriMitra Login 🌱</h2>
+    <div className="signup-wrapper">
+      <div className="signup-card page-card">
+        <h2 className="signup-title">AgriMitra Login 🌱</h2>
 
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-        <br /><br />
+        <form onSubmit={handleLogin} className="signup-form">
+          <div className="form-group">
+            <input
+              className="form-input"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <br /><br />
+          <div className="form-group">
+            <input
+              className="form-input"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </div>
 
-        <button type="submit">Login</button>
-      </form>
+          <button type="submit" className="signup-button">Login</button>
+        </form>
 
-      {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className="signup-error">{error}</p>}
 
-      <p>
-        Don’t have an account? <a href="/signup">Signup</a>
-      </p>
+        <p className="auth-footer">
+          Don’t have an account? <a className="auth-link" href="/signup">Signup</a>
+        </p>
+      </div>
     </div>
   );
 }
